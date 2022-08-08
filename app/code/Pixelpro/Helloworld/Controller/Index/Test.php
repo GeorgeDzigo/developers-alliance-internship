@@ -5,7 +5,7 @@ namespace Pixelpro\Helloworld\Controller\Index;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
-class Index extends \Magento\Framework\App\Action\Action
+class Test extends \Magento\Framework\App\Action\Action
 {
     protected PageFactory $pageFactory;
 
@@ -24,6 +24,7 @@ class Index extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
-        return $this->pageFactory->create();
+        echo 'Hello world';
+        exit;
     }
 }
