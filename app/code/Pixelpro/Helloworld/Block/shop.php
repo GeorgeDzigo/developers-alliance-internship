@@ -2,18 +2,18 @@
 namespace Pixelpro\Helloworld\Block;
 class Shop extends \Magento\Framework\View\Element\Template
 {
-    protected $_storeManager;
-
+    protected $_storeManager;    
+    
     public function __construct(
-        \Magento\Backend\Block\Template\Context $context,
-        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Backend\Block\Template\Context $context,        
+        \Magento\Store\Model\StoreManagerInterface $storeManager,        
         array $data = []
     )
-    {
-        $this->_storeManager = $storeManager;
+    {        
+        $this->_storeManager = $storeManager;        
         parent::__construct($context, $data);
     }
-
+    
     /**
      * Get store identifier
      *
@@ -23,7 +23,7 @@ class Shop extends \Magento\Framework\View\Element\Template
     {
         return $this->_storeManager->getStore()->getId();
     }
-
+    
     /**
      * Get website identifier
      *
@@ -33,7 +33,7 @@ class Shop extends \Magento\Framework\View\Element\Template
     {
         return $this->_storeManager->getStore()->getWebsiteId();
     }
-
+    
     /**
      * Get Store code
      *
@@ -43,7 +43,7 @@ class Shop extends \Magento\Framework\View\Element\Template
     {
         return $this->_storeManager->getStore()->getCode();
     }
-
+    
     /**
      * Get Store name
      *
@@ -53,18 +53,18 @@ class Shop extends \Magento\Framework\View\Element\Template
     {
         return $this->_storeManager->getStore()->getName();
     }
-
+    
     /**
      * Get current url for store
      *
      * @param bool|string $fromStore Include/Exclude from_store parameter from URL
-     * @return string
+     * @return string     
      */
     public function getStoreUrl($fromStore = true)
     {
         return $this->_storeManager->getStore()->getCurrentUrl($fromStore);
     }
-
+    
     /**
      * Check if store is active
      *

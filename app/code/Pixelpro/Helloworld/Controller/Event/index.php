@@ -1,5 +1,5 @@
 <?php
-namespace Pixelpro\Helloworld\Controller\Index;
+namespace Pixelpro\Helloworld\Controller\Event;
 class Index extends \Magento\Framework\App\Action\Action
 {
 	protected $_pageFactory;
@@ -12,6 +12,12 @@ class Index extends \Magento\Framework\App\Action\Action
 	}
 	public function execute()
 	{
-		return $this->_pageFactory->create();
+		$message = new \Magento\Framework\DataObject(array('message' => 'Pixelpro'));
+		$this->_eventManager->dispatch('pixelpro_helloworld_show_message',['message_text' => $message]);
+		echo $message->getMessage();
+		exit;
 	}
 }
+
+		
+		

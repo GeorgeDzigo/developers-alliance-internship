@@ -1,6 +1,6 @@
 <?php
-namespace Pixelpro\Helloworld\Controller\Index;
-class Test extends \Magento\Framework\App\Action\Action
+namespace Pixelpro\Helloworld\Controller\Products;
+class Index extends \Magento\Framework\App\Action\Action
 {
 	protected $_pageFactory;
 	public function __construct(
@@ -12,10 +12,6 @@ class Test extends \Magento\Framework\App\Action\Action
 	}
 	public function execute()
 	{
-		echo "Hello world!";
-		exit;
+		return $this->_pageFactory->create();
 	}
 }
-
-		
-		
