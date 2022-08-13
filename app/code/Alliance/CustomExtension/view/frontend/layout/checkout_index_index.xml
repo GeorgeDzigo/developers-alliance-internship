@@ -2,9 +2,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="checkout.root">
-            <block class="Magento\Framework\View\Element\Template" name="form_additional_info_linkedin_profile"
-                   template="Alliance_CustomExtension::linkedin_profile.phtml" />
+        <referenceContainer name="content">
+            <block class="Alliance\CustomExtension\Block\Edit\Index" name="form_additional_info_linkedin_profile"
+                   template="Alliance_CustomExtension::linkedin_profile.phtml" after="checkout.root" />
         </referenceContainer>
     </body>
 </page>

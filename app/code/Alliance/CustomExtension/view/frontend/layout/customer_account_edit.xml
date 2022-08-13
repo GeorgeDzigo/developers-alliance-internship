@@ -4,7 +4,7 @@
     <body>
         <referenceContainer name="form.additional.info">
             <block class="Alliance\CustomExtension\Block\Edit\Index" name="form_additional_info_linkedin_profile"
-                   template="Alliance_CustomExtension::linkedin_profile.phtml" sortOrder="0"/>
+                   template="Alliance_CustomExtension::linkedin_profile.phtml"/>
         </referenceContainer>
     </body>
 </page>
