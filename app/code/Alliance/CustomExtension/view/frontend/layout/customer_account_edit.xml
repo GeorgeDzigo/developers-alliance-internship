@@ -3,8 +3,8 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="form.additional.info">
-            <block class="Magento\Framework\View\Element\Template" name="form_additional_info_customer_custom_attribute"
-                   template="Alliance_CustomExtension::linkedin_profile.phtml" />
+            <block class="Alliance\CustomExtension\Block\Edit\Index" name="form_additional_info_linkedin_profile"
+                   template="Alliance_CustomExtension::linkedin_profile.phtml" sortOrder="0"/>
         </referenceContainer>
     </body>
 </page>
