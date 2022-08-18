@@ -8,12 +8,16 @@
     ],
     "config": {
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "magento/magento-composer-installer": true
+        }
     },
     "version": "2.4.1",
     "require": {
-        "magento/product-community-edition": "2.4.1",
-        "magento/composer-root-update-plugin": "~1.0"
+        "ext-json": "^7.4",
+        "magento/composer-root-update-plugin": "~1.0",
+        "magento/product-community-edition": "2.4.1"
     },
     "autoload": {
         "exclude-from-classmap": [
@@ -77,4 +81,3 @@
         "magento-force": "override"
     }
 }
-

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Alliance_Weather::css/style.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Alliance\Weather\Block\Weather" template="Alliance_Weather::index.phtml" name="weather_index_index" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>
