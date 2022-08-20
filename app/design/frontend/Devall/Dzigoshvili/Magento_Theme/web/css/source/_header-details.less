@@ -1,0 +1,60 @@
+.info {
+    display: inline-block;
+}
+
+.icon {
+    width: 17px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.header-details {
+    background-color: @light_green;
+    display: flex;
+    justify-content: space-evenly;
+
+    .details-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 85%;
+
+        h2, p {
+            font-size: 1.2rem;
+            margin-top: unset;
+            margin-bottom: unset;
+            color: white;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        div {
+            display: inline-block;
+            padding: 5px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .header-details, .details-container {
+        display: block;
+
+        .details-container {
+            width: 100%;
+
+            .free-delivery, .choose-a-free-gift, .secure-shopping {
+                display: block;
+                border-bottom: 1px solid white;
+
+                img {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}

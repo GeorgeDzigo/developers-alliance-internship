@@ -1,0 +1,16 @@
+<div class="mobile-links">
+    <div class="login">
+        <img class="icon" src="<?= $this->getViewFileUrl('Magento_Theme::images/forum-user.svg') ?>" alt="forum user icon">
+        <?= $this->getLayout()->createBlock('Magento\Customer\Block\Account\Link')->setData('label', 'Login')->toHtml() ?>
+    </div>
+    <div class="wishlist">
+        <img class="icon" src="<?= $this->getViewFileUrl('Magento_Theme::images/003-favorite.svg') ?>" alt="heart icon">
+        <?= $this->getLayout()->createBlock('Magento\Customer\Block\Account\Link')->setData('label', 'Wishlist')->toHtml() ?>
+    </div>
+    <div>
+<!--        --><?php //echo $this->getLayout()
+//      ->createBlock('Magento\Checkout\Block\Cart\Sidebar')
+//      ->setTemplate('Magento_Checkout::cart/minicart.phtml')
+//      ->toHtml(); ?>
+    </div>
+</div>

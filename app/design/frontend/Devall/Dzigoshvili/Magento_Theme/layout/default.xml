@@ -1,0 +1,194 @@
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="form.subscribe" destination="page.bottom.container"/>
+        <move element="navigation.sections" destination="header-wrapper"/>
+        <move element="minicart" destination="header.right.links" before="-"/>
+        <move element="currency" destination="header.right.links"/>
+        <move element="store_language" destination="header.right.links" before="-"/>
+        <move element="register-link" destination="header.left.links"/>
+        <referenceContainer name="header-wrapper">
+            <block name="mobile.header.links" class="Magento\Framework\View\Element\Template" template="Magento_Theme::header_mobile_links.phtml" after="logo"/>
+        </referenceContainer>
+        <referenceContainer name="header.panel">
+            <container name="header.right.links" htmlTag="div" htmlClass="header right-links" before="header.left.links"/>
+            <container name="header.left.links" htmlTag="ul" htmlClass="header left links" before="-">
+                <block class="Magento\Framework\View\Element\Html\Link" name="custom-top-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Checkout</argument>
+                        <argument name="path" xsi:type="string" translate="true">checkout</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                        <argument name="sortOrder" xsi:type="number">110</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Wishlist\Block\Link" name="wish-list-link"/>
+            </container>
+            <referenceBlock name="register-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Register</argument>
+                </arguments>
+            </referenceBlock>
+            <referenceBlock name="authorization-link-login" remove="true"/>
+        </referenceContainer>
+        <referenceContainer name="page.top">
+            <block class="Magento\Framework\View\Element\Template" name="header.details"
+                   template="Magento_Theme::header_details.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <referenceBlock name="copyright" remove="true"/>
+            <block class="Magento\Framework\View\Element\Html\Links" name="my_account_links">
+                <block class="Magento\Framework\View\Element\Text" name="my_account_links_title" before="-">
+                    <arguments>
+                        <argument translate="true" name="text" xsi:type="string">
+                            <![CDATA[<h4>My Account</h4>]]>
+                        </argument>
+                    </arguments>
+                </block>
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer links</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Html\Link" name="my-account-link_footer">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                        <argument name="path" xsi:type="string">customer/account</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="personal-information-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Personal Information</argument>
+                        <argument name="path" xsi:type="string">customer/account</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="payment-methods-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Payment Methods</argument>
+                        <argument name="path" xsi:type="string">vault/cards/listaction</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="orders-history-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Orders History</argument>
+                        <argument name="path" xsi:type="string">sales/order/history</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="payment-options-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Payment Options</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="discount-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Discount</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+            </block>
+            <referenceBlock name="footer_links" remove="true"/>
+            <block class="Magento\Framework\View\Element\Html\Links" name="customer_service_links" after="my_account_links">
+                <block class="Magento\Framework\View\Element\Text" name="customer_service_links_title" before="-">
+                    <arguments>
+                        <argument translate="true" name="text" xsi:type="string">
+                            <![CDATA[<h4>Customer Services</h4>]]>
+                        </argument>
+                    </arguments>
+                </block>
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer links</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Html\Link" name="help-contact-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Help &amp; Contact</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="shipping-taxes-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Shipping &amp; Taxes</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="return-policy-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Return Policy</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="privacy-policy-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Privacy Policy</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="what-is-new-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">What's New</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="affiliates-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Affiliates</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="contact_details"
+                   template="Magento_Theme::footer/contact_details.phtml"/>
+            <block class="Magento\Framework\View\Element\Html\Links" name="information_links">
+                <block class="Magento\Framework\View\Element\Text" name="information_links_title" before="-">
+                    <arguments>
+                        <argument translate="true" name="text" xsi:type="string">
+                            <![CDATA[<h4>Information</h4>]]>
+                        </argument>
+                    </arguments>
+                </block>
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer links</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Html\Link" name="new-products-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">New Products</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="top-sellers-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Top Sellers</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="special-products-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Special Products</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="manufacturers-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Manufacturers</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="suppliers-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Suppliers</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link" name="today-offers-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Today Offers</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+            </block>
+            <block name="instagram.blocks" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/instagram.phtml"/>
+            <block name="payments" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/payments.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

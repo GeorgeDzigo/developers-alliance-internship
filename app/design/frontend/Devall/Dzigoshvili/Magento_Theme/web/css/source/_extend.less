@@ -1,0 +1,458 @@
+@import "_responsive";
+@import "_colors";
+@import "_header-details";
+@import "_contact_details";
+@import "_header-mobile-links";
+
+.page-wrapper {
+    #search {
+        display: none;
+    }
+
+    .page-header {
+        .header {
+            &.content {
+                .logo {
+                    margin: 10px auto 25px 0;
+                }
+
+                .mobile-links {
+                    display: none;
+                }
+
+                .block {
+                    &.block-search {
+                        .block {
+                            &.block-content {
+                                .actions {
+                                    .search {
+                                        border: 1px solid black;
+                                        padding: 0 10px 0 10px;
+                                        margin-top: 3%;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        .panel {
+            &.wrapper {
+                background: none;
+
+                .panel {
+                    &.header {
+                        padding-bottom: 5px;
+
+                        .header {
+                            &.right-links {
+                                div {
+                                    margin-right: 25px;
+
+                                    span {
+                                        font-size: 12px;
+                                    }
+                                }
+
+                                .counter-number {
+
+                                }
+
+                                .minicart-wrapper {
+                                    .action {
+                                        &.showcart {
+                                            .cart-text {
+                                                display: none;
+                                            }
+
+                                            &:before {
+                                                -webkit-font-smoothing: antialiased;
+                                                -moz-osx-font-smoothing: grayscale;
+                                                font-size: 15px;
+                                                line-height: 20px;
+                                                color: #757575;
+                                                content: '\e611';
+                                                font-family: 'luma-icons';
+                                                margin: 0;
+                                                vertical-align: top;
+                                                display: inline-block;
+                                                font-weight: normal;
+                                                overflow: hidden;
+                                                speak: none;
+                                                text-align: center;
+                                            }
+
+
+                                            .counter {
+                                                &.qty {
+                                                    background: none;
+                                                    margin: 0;
+
+                                                    .counter-number {
+                                                        color: @light_grey;
+                                                        line-height: unset;
+                                                        text-shadow: none;
+                                                        background: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.left {
+                                &.links {
+                                    float: left;
+                                }
+                            }
+                        }
+
+                        .switcher-language {
+                            color: grey;
+                        }
+
+                        .switcher-currency {
+                            color: grey;
+                        }
+
+                        .header {
+                            &.links {
+                                li {
+                                    margin-right: 25px;
+
+                                    a {
+                                        font-size: 12px;
+                                        color: grey;
+                                    }
+                                }
+
+                                .greet {
+                                    &.welcome {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page-footer {
+        background: @light_dark;
+
+        .footer {
+            &.content {
+                h4 {
+                    color: white;
+                }
+
+                .footer {
+                    &.links {
+                        margin-right: 6%;
+
+                        li {
+                            a {
+                                color: @light_grey;
+                                line-height: 3rem;
+                            }
+                        }
+                    }
+                }
+
+                .instagram_blocks {
+                    display: inline-block;
+                }
+
+                .payments {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: end;
+
+                    .payment-info {
+                        p {
+                            color: @light_grey;
+                        }
+                    }
+
+                    .payment-list {
+                        img {
+                            width: 45px;
+                            height: 25px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .page-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: 100%;
+        background-color: @light_green;
+        padding: 2rem;
+
+        .newsletter-info, .newsletter {
+            display: inline-block;
+        }
+
+        .newsletter-info {
+            margin-right: 10%;
+
+            img {
+                width: 35px;
+                margin-right: 1rem;
+            }
+
+            h3 {
+                font-weight: bold;
+            }
+
+            h3, p {
+                color: white;
+                margin: 0;
+            }
+        }
+
+        .block {
+            &.newsletter {
+                margin-bottom: 0;
+
+                input {
+                    border-radius: 20px 0 0 20px;
+                    height: 40px;
+                }
+
+                .actions {
+                    .subscribe {
+                        background-color: @dark_green;
+                        border-color: @dark_green;
+                        border-radius: 0 20px 20px 0;
+                        height: 40px;
+                    }
+                }
+
+                .field {
+                    .control {
+                        &:before {
+                            content: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-sections {
+        background: none;
+
+        .navigation {
+            background: none;
+
+            .ui-menu {
+                text-align: right;
+
+                .ui-menu-item {
+                    margin-right: 5%;
+                }
+            }
+        }
+    }
+}
+
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xxs) {
+    body {
+        .page-wrapper {
+            .page-header {
+                .header {
+                    &.content {
+                        .mobile-links {
+                            display: inline-block;
+                        }
+
+                        .nav-toggle {
+                            top: 11.7rem;
+                        }
+
+                        .block {
+                            &.block-search {
+                                .block {
+                                    &.block-content {
+                                        label {
+                                            top: 12rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    body {
+        .page-wrapper {
+            .page-header {
+                .header {
+                    &.content {
+                        .nav-toggle {
+                            top: 65%;
+                        }
+
+                        .block {
+                            &.block-search {
+                                .block {
+                                    &.block-content {
+                                        label {
+                                            position: absolute;
+                                            top: 68%;
+                                            left: 85%;
+                                        }
+                                    }
+                                }
+
+                                #search {
+                                    display: block;
+                                    position: static;
+                                    width: 85%;
+                                    margin-left: 5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .panel {
+                    &.wrapper {
+                        .panel {
+                            &.header {
+                                .header {
+                                    &.right-links {
+                                        .minicart-wrapper {
+                                            .action {
+                                                &.showcart {
+                                                    .cart-text {
+                                                        display: block;
+                                                    }
+
+                                                    &:before {
+                                                        -webkit-font-smoothing: antialiased;
+                                                        -moz-osx-font-smoothing: grayscale;
+                                                        font-size: 22px;
+                                                        line-height: 28px;
+                                                        color: #757575;
+                                                        content: '\e611';
+                                                        font-family: 'luma-icons';
+                                                        margin: 0;
+                                                        vertical-align: top;
+                                                        display: inline-block;
+                                                        font-weight: normal;
+                                                        overflow: hidden;
+                                                        speak: none;
+                                                        text-align: center;
+                                                    }
+
+                                                    .counter {
+                                                        &.qty {
+                                                            .counter-number {
+                                                                display: block;
+                                                                position: absolute;
+                                                                height: 13px;
+                                                                width: 13px;
+                                                                line-height: 14px;
+                                                                border-radius: 30px;
+                                                                background-color: @light_green;
+                                                                color: white;
+                                                                text-align: center;
+                                                                font-weight: bold;
+                                                                top: 20%;
+                                                                left: 50%;
+
+                                                                .counter-text {
+                                                                    display: none;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .page-bottom {
+                display: block;
+                text-align: center;
+                width: unset;
+
+                .info {
+                    p {
+                        display: none;
+                    }
+
+                    h3 {
+                        margin-bottom: 3rem;
+                    }
+                }
+            }
+
+            .page-footer {
+                margin-top: 0;
+
+                .footer {
+                    &.content {
+                        border-top: 0;
+
+                        .footer {
+                            &.links {
+                                li {
+                                    background: unset;
+                                    border-color: unset;
+
+                                    a {
+                                        line-height: unset;
+                                    }
+                                }
+                            }
+                        }
+
+                        .instagram_blocks {
+                            margin-bottom: 3rem;
+                        }
+
+                        .payments {
+                            display: block;
+
+                            .payment-info {
+                                margin-bottom: 2rem;
+                            }
+
+                            .payment-list {
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
