@@ -5,6 +5,9 @@ namespace Alliance\Weather\Model\Config;
 class WeatherConfig
 {
     /** @var string */
+    public const ID = 'id';
+    
+    /** @var string */
     public const CITY = 'city';
     
     /** @var string */

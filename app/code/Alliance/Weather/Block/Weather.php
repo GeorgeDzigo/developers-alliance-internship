@@ -6,6 +6,8 @@ use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\Template;
 use Alliance\Weather\Model\Config\WeatherConfig;
+use Alliance\Weather\Model\ResourceModel\Weather\CollectionFactory;
+use Alliance\Weather\Model\ResourceModel\Weather as ResourceModel;
 
 class Weather extends Template
 {
@@ -18,16 +20,41 @@ class Weather extends Template
     /** @var DataPersistorInterface */
     private DataPersistorInterface $dataPersistor;
 
+    /** @var CollectionFactory */
+    private CollectionFactory $collectionFactory;
+    
+    
+    private ResourceModel $weatherResource;
+
     public function __construct(
-        Template\Context $context,
-        array $data = [],
-        UrlInterface $urlBuilder,
-        DataPersistorInterface $dataPersistor
+        Template\Context       $context,
+        array                  $data = [],
+        UrlInterface           $urlBuilder,
+        DataPersistorInterface $dataPersistor,
+        CollectionFactory      $collectionFactory,
+        ResourceModel          $weatherResource
     )
     {
-        $this->dataPersistor = $dataPersistor;
-        $this->urlBuilder = $urlBuilder;
+        $this->dataPersistor     = $dataPersistor;
+        $this->urlBuilder        = $urlBuilder;
+        $this->collectionFactory = $collectionFactory;
+        $this->weatherResource   = $weatherResource;
         parent::__construct($context, $data);
+    }
+
+    /**
+     * @return \Alliance\Weather\Model\Weather
+     */
+    public function getDataForPDF() {
+        return $this->collectionFactory->create();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTableTitlesForPDF()
+    {
+        return $this->weatherResource->getTableFields();
     }
 
     /**
@@ -36,7 +63,6 @@ class Weather extends Template
     public function getPostUrl() {
         return $this->urlBuilder->getUrl(self::POST_URL);
     }
-
 
     /**
      * @param $key
@@ -127,5 +153,4 @@ class Weather extends Template
     {
         return $this->getDataPersistorItem(WeatherConfig::SUNSET);
     }
-
 }

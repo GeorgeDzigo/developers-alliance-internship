@@ -3,10 +3,12 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="Alliance_Weather::css/style.css"/>
+        <css src="Belvg_UiGrid::css/backend.css"/>
     </head>
     <body>
         <referenceContainer name="content">
             <block class="Alliance\Weather\Block\Weather" template="Alliance_Weather::index.phtml" name="weather_index_index" cacheable="false"/>
+            <uiComponent name="weather_data_grid"/>
         </referenceContainer>
     </body>
 </page>

@@ -11,7 +11,6 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\HTTP\Client\Curl;
 use Alliance\Weather\Model\ResourceModel\Weather as WeatherResourceModel;
 
-
 class Save extends Action
 {
     /** @var Context */
@@ -31,7 +30,7 @@ class Save extends Action
 
     /** @var RedirectFactory */
     private RedirectFactory $redirectFactory;
-    
+
     /** @var DataPersistorInterface */
     private DataPersistorInterface $dataPersistor;
 
@@ -61,7 +60,7 @@ class Save extends Action
         $this->resourceWeather =    $resourceWeather;
         $this->redirectFactory =    $redirectFactory;
         $this->dataPersistor   =    $dataPersistor;
-        
+
         parent::__construct($context);
     }
 
@@ -113,7 +112,7 @@ class Save extends Action
         if ($results['cod'] === 200) {
             $data = $this->extractWeatherData($results);
             $newWeather = $this->weather->setData($data);
-            
+
             foreach ($data as $key => $value) {
                 $this->dataPersistor->set($key, $value);
             }
