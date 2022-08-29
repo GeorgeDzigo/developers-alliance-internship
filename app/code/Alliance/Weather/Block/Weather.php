@@ -22,8 +22,8 @@ class Weather extends Template
 
     /** @var CollectionFactory */
     private CollectionFactory $collectionFactory;
-    
-    
+
+
     private ResourceModel $weatherResource;
 
     public function __construct(
