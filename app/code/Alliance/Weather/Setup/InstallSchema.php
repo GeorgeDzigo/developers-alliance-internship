@@ -88,7 +88,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
             'Wind Speed'
         )->addColumn(
             'sunrise',
-            Table::TYPE_DATE,
+            Table::TYPE_TEXT,
             null,
             [
                 'nullable' => false
@@ -96,7 +96,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
             'Sunrise'
         )->addColumn(
             'sunset',
-            Table::TYPE_DATE,
+            Table::TYPE_TEXT,
             null,
             [
                 'nullable' => false

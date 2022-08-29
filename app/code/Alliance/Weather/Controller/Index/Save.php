@@ -97,8 +97,8 @@ class Save extends Action
             WeatherConfig::PRESSURE => $dataTemp['pressure'],
             WeatherConfig::HUMIDITY => $dataTemp['humidity'],
             WeatherConfig::WIND_SPEED => $data['wind']['speed'],
-            WeatherConfig::SUNRISE => $dataSys['sunrise'],
-            WeatherConfig::SUNSET => $dataSys['sunset']
+            WeatherConfig::SUNRISE => date('H:i:s', $dataSys['sunrise']) ,
+            WeatherConfig::SUNSET => date('H:i:s', $dataSys['sunset'])
         ];
     }
 
